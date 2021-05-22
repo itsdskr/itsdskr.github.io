@@ -43,3 +43,7 @@ body {
         opacity: 0.8;
         margin: 0px;
       }
+ .iframe-container {
+		text-align:center;
+  		width:100%;
+  }
