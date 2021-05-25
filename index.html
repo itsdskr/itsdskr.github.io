@@ -4,6 +4,10 @@
     <link rel="stylesheet" href="css/bkg_img.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
 <body>
 <!--<img src="images/bkg_flex1.jpeg">-->
 <audio src="audio/vachindamma.mp3" autoplay="autoplay" loop="loop"></audio>
@@ -34,28 +38,18 @@
 <p>&nbsp</p>
   
   
-<div class="container">
-  <div class="mySlides">
-    <img src="bkg1.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides">
-    <img src="bkg1.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides">
-    <img src="bkg1.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides">
-    <img src="bkg1.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides">
-    <img src="bkg1.jpeg" style="width:100%">
-  </div>
-  <div class="mySlides">
-    <img src="bkg1.jpeg" style="width:100%">
-  </div>
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a> 
+
+  
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="bkg1.jpeg" style="width:100%">
+  <img class="mySlides" src="" style="width:100%">
+
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
 </div>
+  
+  
   
 
   
@@ -91,30 +85,28 @@ var x = setInterval(function() {
   }
 }, 1000);
   
+
+  
+ 
 var slideIndex = 1;
-showSlides(slideIndex);
+showDivs(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+function plusDivs(n) {
+  showDivs(slideIndex += n);
 }
 
-function showSlides(n) {
+function showDivs(n) {
   var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
+  x[slideIndex-1].style.display = "block";  
+} 
+  
+  
   
   
 </script>
